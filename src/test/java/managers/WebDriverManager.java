@@ -51,6 +51,7 @@ public class WebDriverManager {
                 break;
             case CHROME:
                 System.setProperty(CHROME_DRIVER_PROPERTY, baseFolderPath + ConfigFileReader.getDriverPath());
+                
                 String downloadFilepath = System.getProperty("user.dir")
                         + System.getProperty("file.separator") + "src"
                         + System.getProperty("file.separator") + "test"
@@ -60,7 +61,11 @@ public class WebDriverManager {
                 HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
                 chromePrefs.put("profile.default_content_settings.popups", 0);
                 chromePrefs.put("download.default_directory", downloadFilepath);
-                ChromeOptions options = new ChromeOptions();
+                
+                System.setProperty("webdriver.http.factory", "jdk-http-client");
+
+                ChromeOptions options=new ChromeOptions();    
+                options.addArguments("--remote-allow-origins=*");  
                // options.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking"));
                  
                 options.setExperimentalOption("prefs", chromePrefs);

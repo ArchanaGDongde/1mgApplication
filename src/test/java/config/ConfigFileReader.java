@@ -1,6 +1,7 @@
 package config;
 
 import java.io.*;
+import java.time.Duration;
 import java.util.Properties;
 import enums.DriverType;
 
@@ -12,7 +13,7 @@ import enums.DriverType;
 
 public class ConfigFileReader {  
 
-	private  static final  Properties properties = new Properties();
+	private  static final Properties properties = new Properties();
 	private static final  Properties properties_env = new Properties();
 	static {
 	try {
@@ -55,16 +56,18 @@ public class ConfigFileReader {
 		return 30;
 	}
 
-	public static  long getExplicitWait() {
+	public static  Duration getExplicitWait() {
 		String explicitWait = properties.getProperty("explicitWait");
 		if(explicitWait != null) {
 			try{
-				return Long.parseLong(explicitWait);
+				//return Duration.parse(explicitWait);
+				//return Long.parseLong(explicitWait);
 			}catch(NumberFormatException e) {
 				throw new RuntimeException("Not able to parse value : " + explicitWait + " in to Long");
 			}
 		}
-		return 30;
+		//return 30;
+		return Duration.parse(explicitWait);
 	}
 
 	public static  String getApplicationUrl() {
@@ -264,5 +267,7 @@ public class ConfigFileReader {
 		String getRunCount = getPropertyValue(runCountKey);
 		return getRunCount;
 	}
+
+	
 
 }

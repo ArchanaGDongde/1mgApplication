@@ -1,11 +1,14 @@
-2023-04-11 11:04:148 INFO  LoggerHelper:120 - Entered goToHomePage succesfully
-2023-04-11 11:04:186 INFO  LoggerHelper:134 - click on location box successfully
-2023-04-11 11:04:632 INFO  LoggerHelper:167 - Clicked on  location box  successfully
-2023-04-11 11:04:634 INFO  LoggerHelper:201 - click on search box successfully
-2023-04-11 11:04:588 INFO  LoggerHelper:228 - Clicked on  search box  successfully
-2023-04-11 11:04:593 INFO  LoggerHelper:285 - check delivery page successfully
-2023-04-11 11:04:745 INFO  LoggerHelper:289 - checked delivery page successfully
-2023-04-11 11:04:745 INFO  LoggerHelper:260 - click on cart btn successfully
-2023-04-11 11:04:357 INFO  LoggerHelper:269 - clicked on cart btn successfully
-2023-04-11 11:04:357 INFO  LoggerHelper:301 - click on proceed to cart btn successfully
-2023-04-11 11:04:590 INFO  LoggerHelper:309 - clicked on proceed to  cart btn successfully
+2023-04-25 11:04:951 INFO  LoggerHelper:77 - Close the Pop up
+2023-04-25 11:04:257 INFO  LoggerHelper:80 - Pop up closed successfully
+2023-04-25 11:04:262 INFO  LoggerHelper:91 - Search the product
+2023-04-25 11:04:576 INFO  LoggerHelper:94 - Searched the product sucessfully
+2023-04-25 11:04:576 INFO  LoggerHelper:106 - Click on search icon
+2023-04-25 11:04:742 INFO  LoggerHelper:108 - Clicked on search icon sucessfully
+2023-04-25 11:04:766 INFO  LoggerHelper:135 - Add Product to cart
+2023-04-25 11:04:766 INFO  LoggerHelper:120 - Click on searched item
+2023-04-25 11:04:825 INFO  LoggerHelper:122 - Clicked on searched item succesfully
+2023-04-25 11:04:863 INFO  LoggerHelper:143 - Product added to the cart sucessfully
+2023-04-25 11:04:863 INFO  LoggerHelper:155 - Click on the cart
+2023-04-25 11:04:28 INFO  LoggerHelper:157 - Clicked on the cart sucessfully
+2023-04-25 11:04:38 INFO  LoggerHelper:182 - Assert missing cart item
+2023-04-25 11:04:149 INFO  LoggerHelper:185 - Asserted missing cart item

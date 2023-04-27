@@ -9,8 +9,8 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 
-@CucumberOptions(features = "src/test/resources/features/1mg.feature", glue = { "stepdefs" },
-tags = "@1mgTest", 
+@CucumberOptions(features = "src/test/resources/features/", glue = { "stepdefs" },
+tags = "@mobileFeature",
 plugin={"pretty", "html:target/HtmlReports.html"
 		,"json:target/jsonR"
 				+ ""

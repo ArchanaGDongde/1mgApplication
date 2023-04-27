@@ -32,9 +32,9 @@ public class LoginPage extends BasePage{
 		PageFactory.initElements(webDriver, this);
 	}
 
-	@FindBy(how = How.XPATH, using = "//input[@placeholder='Username']")
+	@FindBy(how = How.NAME, using = "username")
 	private WebElement txtBx_Username;
-	@FindBy(how = How.XPATH, using = "//input[@placeholder='Password']")
+	@FindBy(how = How.NAME, using = "password")
 	private WebElement txtBx_Password;
 	
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']")

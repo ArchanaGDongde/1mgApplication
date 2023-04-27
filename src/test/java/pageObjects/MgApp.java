@@ -1,9 +1,6 @@
 package pageObjects;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
 import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -15,7 +12,6 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -25,7 +21,8 @@ import helper.LoggerHelper;
 public class MgApp extends BasePage {
 	String baseURL;
 	Logger log=LoggerHelper.getLogger(LoggerHelper.class);
-   SoftAssert softAssert=new SoftAssert();
+	SoftAssert softAssert=new SoftAssert();
+	
 	
 	public MgApp(WebDriver webDriver, String baseURL2) {
 		super(webDriver);
@@ -133,9 +130,10 @@ public class MgApp extends BasePage {
 		try{
 			log.info("click on location box successfully");
 			Assert.assertTrue(locationbox.isDisplayed());
-			doHoverandClick(closeAdd);
-			doHoverandClick(updatecity);
 			
+			//doHoverandClick(closeAdd);
+			doHoverandClick(updatecity);
+			doHoverandClick(closeAdd);
 			doHoverandClick(locationbox);
 			
 			
@@ -199,7 +197,7 @@ public class MgApp extends BasePage {
 	public void clickOnSearchbox() {
 		try{
 			log.info("click on search box successfully");
-			waitUntilElementVisible(searchbox);
+			//waitUntilElementVisible(searchbox);
 			Assert.assertTrue(searchbox.isDisplayed());
 			//doHoverandClick(updatecity);
 			//doHoverandClick(ordernow);
@@ -207,7 +205,7 @@ public class MgApp extends BasePage {
 			
 			String optionToSelect="Dolo 650 Tablet";
 			int count=0;
-		waitUntilElementToBeClickable(locationbox);
+	//	waitUntilElementToBeClickable(locationbox);
 			writeText( searchbox,ExcelFileReader.getCellValue("orangehrm.xlsx","Sheet1",15,"A"));
 			
 			
@@ -239,7 +237,7 @@ public class MgApp extends BasePage {
 	public void verifySearchedPage() {
 		try{
 			log.info("verify serached page successfully");
-			//waitUntilElementVisible(verifysearchpage);
+			waitUntilElementVisible(verifysearchpage);
 			softAssert.assertEquals(verifysearchpage.getText(),"Uses and benefits");
 			softAssert.assertAll();
 			
@@ -259,7 +257,7 @@ public class MgApp extends BasePage {
 		try{
 			log.info("click on cart btn successfully");
 		
-			waitUntilElementVisible(addtocartbtn);
+		//	waitUntilElementVisible(addtocartbtn);
 			doHoverandClick(addtocartbtn);
 			doHoverandClick(proceedtocart);
 			
@@ -304,7 +302,7 @@ public class MgApp extends BasePage {
 			
 			
 			doHoverandClick(removetext);
-			    
+			closeWebBrowser();    
 			    
 			log.info("clicked on proceed to  cart btn successfully");
 			    
@@ -321,7 +319,7 @@ public class MgApp extends BasePage {
 	public void verifyCartPage() {
 		try{
 			log.info("verify cart page successfully");
-			//waitUntilElementVisible(verifycartpage);
+			waitUntilElementVisible(verifycartpage);
 			softAssert.assertEquals(verifycartpage.getText(),"strip of 15 tablets");
 			softAssert.assertAll();
 			log.info("verified cart page successfully");
@@ -338,7 +336,7 @@ public class MgApp extends BasePage {
 	public void verifyDeletedCartPage() {
 		try{
 			log.info("verify deleted cart page successfully");
-			waitUntilElementVisible(verifydeletedcartpage);
+			//waitUntilElementVisible(verifydeletedcartpage);
 			softAssert.assertEquals(verifydeletedcartpage.getText(),"ADD MEDICINES");
 			softAssert.assertAll();
 			log.info("verified deleted cart page successfully");
@@ -358,7 +356,6 @@ public class MgApp extends BasePage {
 		
 	XSSFWorkbook book = new XSSFWorkbook("C:\\Users\\archa\\Downloads\\1mgApplication\\1mgApplication\\src\\test\\resources\\Data\\QA\\OrangeHRM.xlsx");
 			XSSFSheet sheet=book.getSheetAt(0);
-			
 			Row row=sheet.getRow(0);
 			Cell cell=row.getCell(3);
 			String ExpectedTitle=cell.getStringCellValue();

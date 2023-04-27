@@ -4,6 +4,7 @@ import cucumber.api.java.en.Then;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import pageObjects.BasePage;
 import pageObjects.MgApp;
 import util.TestContext;
 
@@ -12,7 +13,7 @@ public class MgAppStep  {
 	
 	TestContext testContext;
 	private MgApp mgapp;
-
+	
 	
 	public MgAppStep(TestContext testContext) {
 		this.testContext=testContext;
@@ -60,7 +61,8 @@ public class MgAppStep  {
     {
     
     	mgapp.deleteItemFromCart();
-
+    	
     }
 
+     
 }

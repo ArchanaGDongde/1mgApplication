@@ -2,6 +2,8 @@ package managers;
 import org.openqa.selenium.WebDriver;
 import pageObjects.LoginPage;
 import pageObjects.MgApp;
+import pageObjects.OrangeHRMPage;
+import pageObjects.ProductPage;
 
 
 //import pageObjects.Practice;
@@ -11,7 +13,8 @@ public class PageObjectManager {
 	private String baseURL;
 	private LoginPage loginPage;
 	private MgApp mgapp;
-	
+	private ProductPage prdtpg;
+	private OrangeHRMPage ohrm;
 	
 		
 	public PageObjectManager(WebDriver webDriver, String baseURL) {
@@ -20,14 +23,26 @@ public class PageObjectManager {
 	
 	}
 
-	public LoginPage getLoginPage() {
-		return (this.loginPage == null) ? new LoginPage(webDriver, this.baseURL) : this.loginPage;
-				   
+	public LoginPage getLoginPage() 
+	{
+		return (this.loginPage == null) ? new LoginPage(webDriver, this.baseURL) : this.loginPage;	   
 	}
 
 	
-	public MgApp getMgApp() {
+	public MgApp getMgApp() 
+	{
 		return(this.mgapp==null)? new MgApp(webDriver,this.baseURL): this.mgapp;
+	}
+
+	public ProductPage getProductPage() 
+	{
+		
+		return(this.prdtpg==null)? new ProductPage(webDriver,this.baseURL): this.prdtpg;
+	}
+
+	public OrangeHRMPage getOrangeHRMPage() 
+	{
+		return(this.ohrm==null)? new OrangeHRMPage(webDriver,this.baseURL): this.ohrm;	
 	}
 	
 }	

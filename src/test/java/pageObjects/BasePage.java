@@ -49,8 +49,8 @@ import helper.LoggerHelper;
 
 import util.DateUtil;
 
-public class BasePage {
-	
+public class BasePage 
+{	
    public static WebDriver webDriver;
 	Logger log=LoggerHelper.getLogger(getClass());
 	// Constructor
@@ -71,12 +71,6 @@ public class BasePage {
 			throw e;
 		}
 	}
-
-	
-
-	
-	
-	
 
 	// Read Text
 	public String readText(WebElement webElement) {
@@ -100,10 +94,10 @@ public class BasePage {
 			e.printStackTrace();
 //			Assert.fail();
 			throw e;
-		}
+			}
 		return text;
 	}
-	
+		
 	public void clear(WebElement webElement) {
 		try {
 			//screenshot("cleared");
@@ -168,8 +162,10 @@ public class BasePage {
 	public void doHoverandClick(WebElement webElement) {
 		try {
 			//screenshot("hoverclick");
-			Actions builder = new Actions(webDriver);
-			builder.moveToElement(webElement).click().build().perform();
+			Actions a = new Actions(webDriver);
+			//builder.moveToElement(webElement).click().build().perform();
+
+			a.moveToElement(webElement).click().build().perform();
 			waitFor(5000);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -260,8 +256,7 @@ public class BasePage {
 			WebElement monthDrpDwn = webDriver.findElement(By.xpath("//ngb-datepicker-navigation-select/select[1]"));//// ngb-datepicker//select[1]
 			Select selObj1 = new Select(monthDrpDwn);
 			selObj1.selectByValue(month + "");
-			WebElement dayEle = webDriver
-					.findElement(By.xpath("(//div[contains(@class,'ngb-dp-day')]/div[text()=" + day + "])[1]"));
+			WebElement dayEle = webDriver.findElement(By.xpath("(//div[contains(@class,'ngb-dp-day')]/div[text()=" + day + "])[1]"));
 			//dayEle.click();
 			//screenshot("setDateInDatePicker");
 			clickOnElementByJs(dayEle);
@@ -363,7 +358,6 @@ public class BasePage {
 			//return null;
 			throw e;
 		}
-
 	}
 
 	public void waitUntilElementVisible(WebElement webElement) {
@@ -440,7 +434,8 @@ public class BasePage {
 				}
 				waitFor(500);
 			}
-		} catch (Exception e) {
+		} catch (Exception e) 
+		{
 			e.printStackTrace();
 			throw e;
 		}
@@ -466,7 +461,7 @@ public class BasePage {
 	
 	public boolean waitForMessage(String expecteMessage) {
 		try {
-			return waitForMessage(ConfigFileReader.getExplicitWait()*1000, 100, expecteMessage);
+			return waitForMessage(expecteMessage);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
@@ -475,7 +470,8 @@ public class BasePage {
 
 	public boolean waitForMessageLonger(String expecteMessage) {
 		try {
-			return waitForMessage(ConfigFileReader.getExplicitWait()*2000, 100, expecteMessage);
+			
+			return waitForMessage(expecteMessage);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
@@ -504,7 +500,7 @@ public class BasePage {
 	
 	public boolean waitForOneOfMessages(String[] expectedMessages) {
 		try {
-			return waitForOneOfMessages(ConfigFileReader.getExplicitWait()*1000, 100, expectedMessages);
+			return waitForOneOfMessages(expectedMessages);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
@@ -550,8 +546,7 @@ public class BasePage {
 
 	public void waitUntilElementToBeLocatedRepeated(By by, int count) {
 		try {
-			WebDriverWait wait = new WebDriverWait(webDriver,
-					ConfigFileReader.getExplicitWait());
+			WebDriverWait wait = new WebDriverWait(webDriver, ConfigFileReader.getExplicitWait());
 			for (int i = 0; i < count; i++) {
 				try {
 					wait.until(ExpectedConditions.presenceOfElementLocated(by));
@@ -902,16 +897,16 @@ public class BasePage {
 		}
 
 	}
-
-	public boolean isClickable(WebElement web) {
-		try {
-			WebDriverWait wait = new WebDriverWait(webDriver, 5);
-			wait.until(ExpectedConditions.elementToBeClickable(web));
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
+//
+//	public boolean isClickable(WebElement web) {
+//		try {
+//			WebDriverWait wait = new WebDriverWait(webDriver, 5);
+//			wait.until(ExpectedConditions.elementToBeClickable(web));
+//			return true;
+//		} catch (Exception e) {
+//			return false;
+//		}
+//	}
 
 	public void implicitwaitFor(int seconds) {
 		try {
