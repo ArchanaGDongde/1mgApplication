@@ -76,6 +76,7 @@ public class OrangeHRMPage extends BasePage
 		
 			try {
 				loginBtn.click();
+				BasePage.closeWebBrowser();
 			} catch (Exception e) 
 			{
 				e.printStackTrace();

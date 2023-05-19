@@ -9,8 +9,9 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 
-@CucumberOptions(features = "src/test/resources/features/", glue = { "stepdefs" },
-tags = "@mobileFeature",
+@CucumberOptions(features = ".\\src\\test\\resources\\features\\OrangeHrmLogin.feature", glue = { "stepdefs" }, 
+
+tags ="@LoginPage",
 plugin={"pretty", "html:target/HtmlReports.html"
 		,"json:target/jsonR"
 				+ ""

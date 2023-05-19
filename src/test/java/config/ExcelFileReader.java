@@ -4,8 +4,10 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.hssf.util.CellReference;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -83,4 +85,21 @@ public class ExcelFileReader extends ConfigFileReader{
     public static void main(String[] args) {
         System.out.println(ExcelFileReader.getCellValue("addpharmacy.xlsx","Sheet1", 1, "A"));
     }
+    
+    public void writeDataToExcel(String  value, int rowNum) throws IOException 
+	{
+    	Workbook workbook = new XSSFWorkbook();
+		org.apache.poi.ss.usermodel.Sheet sheet = workbook.createSheet("Data");
+		
+			org.apache.poi.ss.usermodel.Row row = sheet.createRow(rowNum++);
+			org.apache.poi.ss.usermodel.Cell cell = row.createCell(0);
+			cell.setCellValue(value);
+		
+
+		String fileName = "data.xlsx";
+		FileOutputStream outputStream = new FileOutputStream(fileName);
+		workbook.write(outputStream);
+		workbook.close();
+		outputStream.close();
+	}
 }

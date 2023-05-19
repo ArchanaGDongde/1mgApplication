@@ -131,7 +131,7 @@ public class MgApp extends BasePage {
 			log.info("click on location box successfully");
 			Assert.assertTrue(locationbox.isDisplayed());
 			
-			//doHoverandClick(closeAdd);
+			doHoverandClick(closeAdd);
 			doHoverandClick(updatecity);
 			doHoverandClick(closeAdd);
 			doHoverandClick(locationbox);

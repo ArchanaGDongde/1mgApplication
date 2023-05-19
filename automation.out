@@ -1,14 +1,5 @@
-2023-04-25 11:04:951 INFO  LoggerHelper:77 - Close the Pop up
-2023-04-25 11:04:257 INFO  LoggerHelper:80 - Pop up closed successfully
-2023-04-25 11:04:262 INFO  LoggerHelper:91 - Search the product
-2023-04-25 11:04:576 INFO  LoggerHelper:94 - Searched the product sucessfully
-2023-04-25 11:04:576 INFO  LoggerHelper:106 - Click on search icon
-2023-04-25 11:04:742 INFO  LoggerHelper:108 - Clicked on search icon sucessfully
-2023-04-25 11:04:766 INFO  LoggerHelper:135 - Add Product to cart
-2023-04-25 11:04:766 INFO  LoggerHelper:120 - Click on searched item
-2023-04-25 11:04:825 INFO  LoggerHelper:122 - Clicked on searched item succesfully
-2023-04-25 11:04:863 INFO  LoggerHelper:143 - Product added to the cart sucessfully
-2023-04-25 11:04:863 INFO  LoggerHelper:155 - Click on the cart
-2023-04-25 11:04:28 INFO  LoggerHelper:157 - Clicked on the cart sucessfully
-2023-04-25 11:04:38 INFO  LoggerHelper:182 - Assert missing cart item
-2023-04-25 11:04:149 INFO  LoggerHelper:185 - Asserted missing cart item
+2023-05-19 18:05:523 INFO  LoggerHelper:46 - Entered goToLoginPage succesfully
+2023-05-19 18:05:582 INFO  LoggerHelper:58 - Entered enter_Username succesfully
+2023-05-19 18:05:733 INFO  LoggerHelper:81 - Executed enter_Username Successfully
+2023-05-19 18:05:734 INFO  LoggerHelper:95 - Entered enter_Password succesfully
+2023-05-19 18:05:855 INFO  LoggerHelper:122 - Executed enter_Password Successfully

@@ -372,7 +372,7 @@ public class BasePage
 		}
 	}
 
-	public void waitUntilElementToBeClickable(WebElement webElement) {
+	public static void waitUntilElementToBeClickable(WebElement webElement) {
 		try {
 			WebDriverWait wait = new WebDriverWait(webDriver, ConfigFileReader.getExplicitWait());
 			wait.until(ExpectedConditions.elementToBeClickable(webElement));
@@ -384,16 +384,16 @@ public class BasePage
 		}
 	}
 
-	public void waitUntilElementToBeClickableScrolling(By by) {
+	public static void waitUntilElementToBeClickableScrolling(WebElement webelement) {
 		try {
 			for (int i=0;i<3;i++) {
-				if (isElementPresent(by)) {
+				if (isElementPresent(webelement)) {
 					break;
 				}
 				waitFor(2000);
 			}
 			for (int i=0;i<30;i++) {
-				if (!isElementPresent(by)) {
+				if (!isElementPresent(webelement)) {
 					scrollDownByAction();
 					waitFor(3000);
 				}
@@ -678,7 +678,7 @@ public class BasePage
 		}
 	}
 
-	public void scrollDownByAction() {
+	public static void scrollDownByAction() {
 		try {
 			Actions act = new Actions(webDriver);
 			act.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -987,7 +987,7 @@ public class BasePage
 		}
 	}
 
-	public void clickOnElementByCoordinates(int x, int y) {
+	public static void clickOnElementByCoordinates(int x, int y) {
 		try {
 			Actions act = new Actions(webDriver);
 			act.moveByOffset(x, y).click().build().perform();
@@ -1211,7 +1211,7 @@ public class BasePage
 	}
 
 
-	public boolean isElementPresent(WebElement element) {
+	public static boolean isElementPresent(WebElement element) {
 		try {
 			boolean flag = false;
 			webDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
@@ -1264,31 +1264,17 @@ public class BasePage
 	}*/
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		public void closeWebBrowser(){
+		public static void closeWebBrowser(){
 			try{
-				log.info("Entered closeWebPage succesfully");	
+				//log.info("Entered closeWebPage succesfully");	
 				webDriver.close();
 				webDriver.quit();
-				log.info("Executed closeWebPage Successfully");
+				///log.info("Executed closeWebPage Successfully");
 			} 
 			catch  (Exception e) 
 			{
 
-				log.error("Not Executed closeWebPage"); 
+				//log.error("Not Executed closeWebPage"); 
 				e.printStackTrace(); 
 				throw e;
 			}

@@ -1,5 +1,7 @@
 package managers;
 import org.openqa.selenium.WebDriver;
+
+import pageObjects.BseIndiaPage;
 import pageObjects.LoginPage;
 import pageObjects.MgApp;
 import pageObjects.OrangeHRMPage;
@@ -15,7 +17,8 @@ public class PageObjectManager {
 	private MgApp mgapp;
 	private ProductPage prdtpg;
 	private OrangeHRMPage ohrm;
-	
+	private BseIndiaPage bseIndia;
+
 		
 	public PageObjectManager(WebDriver webDriver, String baseURL) {
 		this.webDriver = webDriver;
@@ -43,6 +46,11 @@ public class PageObjectManager {
 	public OrangeHRMPage getOrangeHRMPage() 
 	{
 		return(this.ohrm==null)? new OrangeHRMPage(webDriver,this.baseURL): this.ohrm;	
+	}
+
+	public BseIndiaPage getBseIndiaPage() 
+	{
+		return (this.bseIndia== null)? new BseIndiaPage(webDriver, this.baseURL): this.bseIndia ;
 	}
 	
 }	
